@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Tambahkan flex container */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    height: 100vh;
+    background-color: #feeacc;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #ff9900;
+    color:#fefefe ;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.sidebar-header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar-menu a {
+    color: #fff;
+    text-decoration: none;
+   align-items: center;
+}
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.content {
+    background-color: #ffffff;
+    margin-left: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan pada kotak konten */
+
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+.content .search{
+    justify-content: space-between;
+}
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions button,
+.actions select,
+.actions input {
+    margin-left: 10px;
+}
+
+.table-container {
+    background-color: #FFA500;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar-menu li a img {
+    width: 20px; /* Atur ukuran ikon sesuai kebutuhan Anda */
+    margin-right: 10px; /* Beri jarak antara ikon dan teks menu */
+}
+
+/* Gaya untuk tombol hamburger (hanya muncul pada tampilan handphone dan tablet) */
+.toggle-sidebar {
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+.show-sidebar {
+    display: none; /* Sembunyikan tombol pada awalnya */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ /* RESPONSIVE CSS */    
+
+  @media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-250px); /* Sembunyikan sidebar di luar layar */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Tampilkan sidebar saat aktif */
+    }
+
+    .toggle-sidebar {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 999; /* Pastikan tombol toggle tampil di atas elemen lain */
+    }
+
+    .sidebar-menu li {
+        display: none; /* Sembunyikan menu sidebar saat sidebar tertutup */
+        text-align: left; /* Pusatkan teks ke kiri */
+        margin-left: 0; /* Hapus margin kiri */
+    }
+
+    .sidebar-menu li a img {
+        width: 16px; /* Ubah ukuran ikon untuk perangkat kecil */
+        margin-right: 8px; /* Ubah jarak untuk perangkat kecil */
+    }
+
+    .sidebar-menu li a {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; /* Pusatkan ikon ke kiri dan teks ke kanan */
+        text-align: left; /* Pusatkan teks ke kiri */
+        padding: 10px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .sidebar.active .sidebar-menu li {
+        display: block; /* Tampilkan menu saat sidebar aktif */
+    }
+        
+ .content {
+                margin-left: 0;
+            }
+        
+            .content-header {
+                flex-direction: column; /* Ubah tata letak header menjadi vertikal */
+                align-items: flex-start; /* Pusatkan elemen header ke kiri */
+            }
+        
+            .content-header-right {
+                margin-top: 10px; /* Beri jarak atas pada elemen kanan header */
+                text-align: left; /* Pusatkan teks ke kiri pada elemen kanan header */
+            }
+        
+            .data-table {
+                overflow-x: auto; /* Tambahkan scroll horizontal jika tabel terlalu lebar */
+            }
+        }

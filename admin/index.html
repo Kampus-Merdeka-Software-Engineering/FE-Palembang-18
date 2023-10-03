@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <img src="icon.png" alt="Logo">
+        </div>
+        <div class="sidebar-header">
+            <h1>Admin Panel</h1>
+        </div>
+        <button class="toggle-sidebar">
+            <div class="bar"></div>
+             <div class="bar"></div>
+             <div class="bar"></div>
+         </button>
+        <!-- Tombol "Show Sidebar" untuk smartphone dan tablet -->
+        <button class="show-sidebar">Show Sidebar</button>
+        <ul class="sidebar-menu">
+            <li><a href="#"><img src="/image/Bukalapak.png" alt="Orders">Orders</a></li>
+            <li><a href="#"><img src="/image/sopi.png" alt="Rates">Rates</a></li>
+            <li><a href="#"><img src="/image/logo2.png" alt="Reports">Reports</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <header>
+            <h1>DATA ORDER BARANG</h1>
+            <div class="actions">
+                <button class="btn">Laporan</button>
+                <button class="btn">Tambah</button>
+            </div>
+             
+        </header>
+        <div class="Search">
+            <select>
+                <option>Show 10 entries</option>
+                <option>Show 20 entries</option>
+                <option>Show 50 entries</option>
+            </select>
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.resi</th>
+                        <th>Status</th>
+                        <th>Fee</th>
+                        <th>Deskripsi</th>
+                        <th>Asal</th>
+                        <th>Tujuan</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data dari database akan ditampilkan di sini -->
+                </tbody>
+            </table>
+        </div>
+
+    <script src="asset-admin/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#tabeluser').DataTable({
+            searching: true,
+          });
+        });
+      </script>
+</body>
+</html>

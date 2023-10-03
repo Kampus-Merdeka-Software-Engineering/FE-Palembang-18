@@ -1,0 +1,175 @@
+ 
+/* Styling Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7e7cb;
+    color: #000000;
+    padding: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.header > .company-info > h1 {
+    color: #E3A32C;
+}
+
+.company-info {
+    flex: 1;
+    max-width: 40%; /* Menambahkan batasan lebar maksimal untuk penjelasan */
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.company-info > p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+    line-height: 2;
+ }
+
+.company-logo img {
+    max-width: 500px;
+    
+}
+
+
+
+/* Styling Product Section */
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+   
+}
+
+
+.product-description {
+    flex: 1;
+    max-width: 40%;  
+    overflow: hidden; /* Menggunakan overflow untuk mengatasi teks yang terlalu panjang */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 40px 40px 0;
+}
+
+.product-description > h2{
+    color: #E3A32C;
+   
+
+}
+.product-image img {
+    max-width: 500px;
+}
+
+.product-description > p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+    line-height: 2;
+}
+
+
+
+
+/* Styling Vision and Mission Section */
+ /* Styling Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #f2f2f2; */
+    padding: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.vision-mission-description {
+    flex: 1;
+    max-width: 50%; /* Menambahkan batasan lebar maksimal untuk penjelasan */
+    overflow: hidden; /* Menggunakan overflow untuk mengatasi teks yang terlalu panjang */
+margin: 40px 40px 0;
+}
+
+.vision-mission-description > h2{
+    color: #E3A32C;
+}
+
+.vision-mission-description > p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+}
+
+.vision-mission-image img {
+    max-width: 500px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px){
+/* Styling Header */
+.header {
+    display: flex;
+    z-index: -1;
+    flex-direction: column; /* Ubah arah tampilan menjadi kolom pada tampilan smartphone */
+    align-items: center; /* Pusatkan konten pada tampilan smartphone */
+    background-color: #f7f48f;
+    color: #000000;
+    padding: 20px;
+}
+
+.company-info {
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; /* Pusatkan teks pada tampilan smartphone */
+}
+
+.company-logo img {
+    max-width: 100px;
+    margin-top: 20px; /* Beri jarak atas pada tampilan smartphone */
+}
+
+/* Styling Product Section */
+.product {
+    display: flex;
+    flex-direction: column; /* Ubah arah tampilan menjadi kolom pada tampilan smartphone */
+    align-items: center; /* Pusatkan konten pada tampilan smartphone */
+    padding: 20px;
+     
+}
+
+.product-description{
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; 
+}
+
+.product-image img {
+    max-width: 100px;
+    margin-bottom: 20px; /* Beri jarak bawah pada tampilan smartphone */
+}
+
+/* Styling Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    flex-direction: column; /* Ubah arah tampilan menjadi kolom pada tampilan smartphone */
+    align-items: center; /* Pusatkan konten pada tampilan smartphone */
+    
+    padding: 20px;
+}
+
+.vision-mission-description{
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; 
+}
+
+.vision-mission-image img {
+    max-width: 200px;
+    margin-top: 20px; /* Beri jarak atas pada tampilan smartphone */
+}
+
+ 
+}

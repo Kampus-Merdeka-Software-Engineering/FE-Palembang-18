@@ -1,0 +1,408 @@
+<div class="features">
+    <div class="feature">
+        <label for="tracking">Nomor Pengiriman:</label>
+        <p>Masukkan Nomor Resi Barang </p>
+        <input type="text" id="tracking" placeholder="Masukkan nomor pengiriman" required>
+        <div class="button-container">
+        <button>Lacak</button>
+        </div>
+    </div>
+
+    <div class="feature">
+        <label for="origin">Cek Tarif:</label>
+        <p>Masukkan Asal, Tujuan dan berat barang anda</p>
+        <input type="text" id="origin" placeholder="Kota asal">
+        <input type="text" id="destination" placeholder="Kota tujuan">
+        <input type="text" id="weight" placeholder="Berat barang">
+        <div class="button-container">
+            <button>Cek Tarif</button>
+        </div>
+    </div>
+
+    <div class="feature">
+        <label for="lokasi">Lokasi Agen:</label>
+        <p>Cari Lokasi Terdekat</p>
+        <input type="text" id="lokasi" placeholder="Kecamatan/Kota">
+        <div class="button-container">
+        <button>Cari</button>
+        </div>
+    </div>
+</div>
+
+<!-- ======= NAVBAR & CSS NYA 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+      
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="nav.css">  
+    <title>Navbar</title>
+</head>
+<body>
+      
+     
+     <nav class="navbar">
+             
+        <div class="logo">
+            <a href="index.html"><img src="image/logo1.png" alt="img" height="40px" ></a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <ul class="menu">
+           
+            <li class="menu-item dropdown">
+                <a href="#">Search<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="lacak.html">Tracking</a></li>
+                    <li><a href="cektrf.html">Cek Tarif</a></li>
+                    <li><a href="lokasi.html">Cek Lokasi</a></li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <a href="#">Information<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <a href="#">AboutUs<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="profile.html">Company Profile</a></li>
+                    <li><a href="#">News & Event</a></li>
+                </ul>
+            </li>
+        </ul>
+
+    </div>
+
+    
+         
+    </nav>
+ 
+ 
+
+<script src="burger.js"></script>
+</body>
+
+</html>
+
+                        ==========CSS=========
+                        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+     
+}
+
+/* Navbar style */
+.navbar {
+    display: flex;
+     align-items: center;
+    background-color: #F5F7FA;
+    padding: 10px 20px;
+    justify-content: space-between;
+ }
+
+ 
+ 
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: 50px;
+    
+}
+
+.menu-item {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #E3A32C;
+    transition: color 0.3s ease;
+    
+}
+
+.menu-item a:hover {
+    color: #e74c3c;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+    z-index: 2;
+    text-align: center;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+}
+
+.submenu li {
+    margin:  20px 0;
+
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #E3A32C;
+ }
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #E3A32C;
+     padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+ }
+
+.login:hover {
+    background-color: #654321;
+}
+
+.signup {
+    text-decoration: none;
+    color: #fff;
+    background-color: #E3A32C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+ }
+
+.signup:hover {
+    background-color: #654321;
+}
+
+.fa-chevron-down {
+    margin-left: 2px;
+    display: inline-block;
+    transition: transform 0.3s;  
+}
+
+ .menu-item.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E3A32C;
+    margin: 4px 0;
+    border-radius: 3px;
+}
+/* animasi bar */
+.bar.cross1 {
+    transform: rotate(-45deg) translate( 0, -5px);
+}
+
+.bar.cross2 {
+    opacity: 0;
+}
+
+.bar.cross3 {
+    transform: rotate(45deg) translate(-5px, 0);
+}
+
+/* Ubah tampilan menu pada resolusi yang lebih kecil */
+@media screen and (max-width: 567px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #E3A32C;
+        margin: 4px 0;
+        border-radius: 3px;
+    }
+
+    /* Sembunyikan menu utama saat lebar layar ≤ 567px */
+    .menu {
+        display: none;
+    }
+
+    /* Tampilkan menu saat kelas "active" diterapkan pada hamburger */
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #F5F7FA;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+
+    .menu-item {
+        margin: 0;
+        padding: 10px 0;
+    }
+
+    .menu-item a {
+        color: #E3A32C;
+        font-size: 16px;
+    }
+}
+
+
+                            JAVASCRIPT
+                            const hamburger = document.getElementById("hamburger");
+const menu = document.querySelector(".menu");
+const bars = document.querySelectorAll(".bar");
+
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("active");
+
+      // Toggle animasi untuk membuat silang
+      bars[0].classList.toggle("cross1");
+      bars[1].classList.toggle("cross2");
+      bars[2].classList.toggle("cross3");
+      
+      // Toggle submenu saat hamburger menu aktif
+      if (mobileMenu.classList.contains("active")) {
+          searchSubMenu.classList.add("show-submenu");
+      } else {
+          searchSubMenu.classList.remove("show-submenu");
+      }
+  });
+ 
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* CSS kotak fitur */
+.features {
+    margin: 20px 0;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.feature {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.feature p {
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.feature label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.feature input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Tambahkan gaya untuk tombol header */
+.feature-header {
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+
+.feature-header::after {
+    content: "\f078"; /* Unicode untuk ikon panah bawah (Font Awesome) */
+    font-family: FontAwesome;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.feature-header.open::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* CSS untuk konten yang dapat diakses dengan mengklik header */
+.feature-content {
+    padding: 0 20px;
+    display: none;
+}
+
+@media (max-width: 767px) {
+    /* Tampilan untuk layar dengan lebar maksimal 767px (ponsel dan tablet) */
+    .features {
+        display: block; /* Menggunakan tampilan blok pada perangkat mobile */
+    }
+
+    .feature {
+        margin: 0;
+    }
+
+    /* Tampilkan konten yang sesuai saat mengklik header */
+    .feature-header.open + .feature-content {
+        display: block;
+    }
+}

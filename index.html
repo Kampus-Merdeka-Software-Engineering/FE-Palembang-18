@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="asset/responsive.css">
+    <title>LemparAja</title>
+</head>
+<body>
+   
+    <!-- <div id="navbar-container"></div> -->
+ 
+   <!-- ==============Navbar start ==============-->
+   <nav class="navbar">
+             
+        <div class="logo">
+            <a href="index.html"><img src="image/logo1.png" alt="img" height="40px" ></a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <!-- <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div> -->
+        <ul class="menu">
+             <!-- <li class="menu-item dropdown">
+                <a href="#">Order<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="#">Drop Of </a></li>
+                    <li><a href="#">Pickup</a></li>
+                </ul>
+            </li> -->
+            <li class="menu-item dropdown">
+                <a href="#">Search<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="lacak.html">Tracking</a></li>
+                    <li><a href="cektrf.html">Cek Tarif</a></li>
+                    <li><a href="lokasi.html">Cek Lokasi</a></li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <a href="#">Information<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="#">Terms</a></li>
+                </ul>
+            </li>
+            <li class="menu-item dropdown">
+                <a href="#">AboutUs<i class="fas fa-chevron-down"></i></a>
+                <ul class="submenu">
+                    <li><a href="profile.html">Company Profile</a></li>
+                    <li><a href="#">News & Event</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+        <!-- <div class="user">
+            <a href="login.html" class="login">Login</a>
+            <a href="registrasi.html" class="signup">SignUp</a>
+        </div> -->
+    </nav>
+   <!-- ==============Navbar end ==============-->
+ 
+    <!-- konten gambar jalan -->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <a href="#"><img src="image/iklan2.png" alt="Gambar 1" > </a>
+            </div>
+            <div class="slide">
+                <a href="#"><img src="image/dropbarang.png" alt="Gambar 2"></a>
+            </div>
+            <div class="slide">
+                <a href="#"><img src="image/cektarif.png" alt="Gambar 3"> </a>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+            <span class="slider-dot"></span>
+        </div>
+    </div>
+<!-- konten gambar end -->
+
+<!-- kotak fitur start -->
+ 
+
+<!-- Kotak fitur start -->
+<div class="features">
+    <div class="feature">
+        <div class="feature-header" data-toggle="feature1">Lacak Pengiriman: <i class="fas fa-chevron-down"></i></div>
+        <div class="feature-content" id="feature1">
+            <label for="tracking">Nomor Pengiriman:</label>
+            <p>Masukkan Nomor Resi Barang </p>
+            <input type="text" id="tracking" placeholder="Masukkan nomor pengiriman" required>
+            <div class="button-container">
+                <button>Lacak</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-header" data-toggle="feature2">Cek Tarif: <i class="fas fa-chevron-down"></i></div>
+        <div class="feature-content" id="feature2">
+            <label for="origin">Cek Tarif:</label>
+            <p>Masukkan Asal, Tujuan dan berat barang anda</p>
+            <input type="text" id="origin" placeholder="Kota asal">
+            <input type="text" id="destination" placeholder="Kota tujuan">
+            <input type="text" id="weight" placeholder="Berat barang">
+            <div class="button-container">
+                <button>Cek Tarif</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="feature">
+        <div class="feature-header" data-toggle="feature3">Cek Lokasi Agen: <i class="fas fa-chevron-down"></i></div>
+        <div class="feature-content" id="feature3">
+            <label for="lokasi">Lokasi Agen:</label>
+            <p>Cari Lokasi Terdekat</p>
+            <input type="text" id="lokasi" placeholder="Kecamatan/Kota">
+            <div class="button-container">
+                <button>Cari</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+
+
+<!-- kotak fitur end -->
+
+<!-- kotak bagian iklan voucher -->
+<div class="ads">
+    <div class="ad">
+        <img src="image/pocer1.jpg" alt="Voucher 1">
+    </div>
+    <div class="ad">
+        <img src="image/pocer2.png" alt="Voucher 2">
+    </div>
+    <div class="ad">
+        <img src="image/pocer3.jpg" alt="Voucher 3">
+    </div>
+    <div class="ad">
+        <img src="voucher4.jpg" alt="Voucher 4">
+    </div>
+ </div>
+<!-- iklan voucher end -->
+
+<!-- untuk whyus -->
+<h2 class="why-us-title">Why Us</h2>
+<p class="why-us-isi">Kami akan terus mengembangkan perusahaan agar go internasional</p>
+<div class="why-us">
+    <div class="why-us-box">
+        <div class="circle-icon">
+            <img src="image/megangbox.PNG" alt="Icon 1">
+        </div>
+        <h3>Keunggulan 1</h3>
+        <p>Penjelasan tentang keunggulan yang pertama.</p>
+    </div>
+    <div class="why-us-box">
+        <div class="circle-icon">
+            <img src="image/logo1.png" alt="Icon 2">
+        </div>
+        <h3>Keunggulan 2</h3>
+        <p>Penjelasan tentang keunggulan yang kedua.</p>
+    </div>
+    <div class="why-us-box">
+        <div class="circle-icon">
+            <img src="image/tokped .png" alt="Icon 3">
+        </div>
+        <h3>Keunggulan 3</h3>
+        <p>Due to the application of the Work from Home system throughout Indonesia, delivery constraints have resulted in a number of buildings, offices, shopping centers, schools, and other entertainment venues.</p>
+    </div>
+</div>
+
+ 
+<!-- whyus end -->
+
+<!-- untuk logo client -->
+<div>
+   <h2 class="client-judul">Our Clients</h2>
+   <p class="client-isi">Electronic commerce atau e-commerce adalah suatu proses terjadinya transaksi jual beli yang dalam prakteknya dilakukan secara online melalui media elektronik. Menurut Laudon & Laudon, e-commerce adalah transaksi business to business yang terjadi dengan perantara jaringan internet.</p> 
+<div class="clients">
+    <div class="client-logo">
+        <img src="image/sopi.png" alt="Client 1">
+    </div>
+    <div class="client-logo">
+        <img src="image/tokped .png" alt="Client 2">
+    </div>
+    <div class="client-logo">
+        <img src="image/Bukalapak.png" alt="Client 3">
+    </div>
+    <div class="client-logo">
+        <img src="image/Lazada.png" alt="Client 3">
+    </div>
+</div>
+</div>
+<!-- logo client end -->
+
+<!-- footer start -->
+<footer>
+    <div class="footer-left">
+        <p>&copy; 2023 LemparAja</p>
+        <div class="social-icons">
+            <img src="image/Bukalapak.png" alt="Facebook">
+            <img src="image/Lazada.png" alt="Twitter">
+            <img src="image/iklan2.png" alt="Instagram">
+        </div>
+    </div>
+    <div class="footer-center">
+        <h4>LemparAja Company</h4>
+        <p>Support</p>
+        <p>About Us</p>
+        <p>Blog</p>
+    </div>
+    <div class="footer-right">
+        <p>Stay up to date</p>
+        <div class="email-input">
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+    <script src="asset/js/script.js"></script>
+    <!-- <script src="asset/js/navbar.js"></script> -->
+    <script src="asset/js/fitur.js"></script>
+    <script src="burger.js"></script>
+
+
+
+</body>
+</html>

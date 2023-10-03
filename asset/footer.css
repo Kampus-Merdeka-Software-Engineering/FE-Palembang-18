@@ -1,0 +1,59 @@
+/* css footer */
+footer {
+    background-color: #6b6969;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+}
+
+.social-icons img {
+    max-width: 24px;
+    height: auto;
+    margin-right: 10px;
+    margin: 5px 0; 
+}
+
+.footer-center {
+    text-align: left;
+}
+
+.footer-center h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.footer-center p {
+    margin: 5px 0;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.email-input input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+}
+
+.email-input button {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.email-input button:hover {
+    background-color: #ff6600;
+}

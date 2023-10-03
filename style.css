@@ -1,0 +1,1088 @@
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+ 
+  
+  /* Navbar style */
+  .navbar {
+    display: flex;
+     align-items: center;
+    background-color: #F5F7FA;
+    padding: 10px 20px;
+    justify-content: space-between;
+  }
+  
+  
+  
+  
+  .menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: 50px;
+    
+  }
+  
+  .menu-item {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .menu-item a {
+    text-decoration: none;
+    color: #E3A32C;
+    transition: color 0.3s ease;
+    
+  }
+  
+  .menu-item a:hover {
+    color: #e74c3c;
+  }
+  
+  .dropdown:hover .submenu {
+    display: block;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .submenu {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+  }
+  
+  .submenu li {
+    margin:  20px 0;
+  
+  }
+  
+  .submenu a {
+    text-decoration: none;
+    color: #E3A32C;
+  }
+  
+  /* .user {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #E3A32C;
+     padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login:hover {
+    background-color: #654321;
+  }
+  
+  .signup {
+    text-decoration: none;
+    color: #fff;
+    background-color: #E3A32C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .signup:hover {
+    background-color: #654321;
+  } */
+  
+  .fa-chevron-down {
+    margin-left: 2px;
+    display: inline-block;
+    transition: transform 0.3s;  
+  }
+  
+  .menu-item.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+  }
+  
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #E3A32C;
+    margin: 4px 0;
+    border-radius: 3px;
+  }
+  /* animasi bar */
+  .bar.cross1 {
+    transform: rotate(-45deg) translate( 0, -5px);
+  }
+  
+  .bar.cross2 {
+    opacity: 0;
+  }
+  
+  .bar.cross3 {
+    transform: rotate(45deg) translate(-5px, 0);
+  }
+  
+  /* Responsive smartphone */
+  @media screen and (max-width: 567px) {
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 5px;
+    }
+  
+    .bar {
+        width: 30px;
+        height: 3px;
+        background-color: #E3A32C;
+        margin: 4px 0;
+        border-radius: 3px;
+    }
+  
+     
+    .menu {
+        display: none;
+    }
+  
+     
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        background-color: #F5F7FA;
+        position: absolute;
+        top: 60px;
+       right: 0;
+        width: 80%;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+    }
+  
+    .menu-item {
+        margin: 0;
+        padding: 10px 0;
+    }
+  
+    .menu-item a {
+        color: #E3A32C;
+        font-size: 16px;
+    }
+  
+   
+  /* 
+    .menu-item.active .submenu {
+      display: block;
+  } */ 
+  }
+
+/* gambar iklan jalan */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+
+   
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider-controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.slider-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.slider-dot.active {
+    background-color: #ff9900;
+}
+
+/* css kotak fitur */
+.features {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: 1fr; /* Satu kolom pada tampilan ponsel */
+    margin: 20px 0;
+    padding: 30px;
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+
+}
+
+.feature {
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px; /* Margin untuk ruang antar kotak fitur */
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ }
+
+.feature p {
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.feature label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.feature input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.feature-header {
+    padding: 20px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+}
+
+.feature-content {
+    padding: 0 20px;
+    display: none; }
+ 
+.feature button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    
+     
+  
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.feature button:hover {
+    background-color: #ff6600;
+}
+/* .fa-chevron-down {
+    margin-left: 2px;
+    display: inline-block;
+    transition: transform 0.3s;
+    align-items: flex-end;
+     
+}
+
+ .feature-header:hover .fa-chevron-down {
+    transform: rotate(180deg);
+} */
+/* CSS untuk ikon panah */
+.feature-header i {
+    float: right; /* Geser ikon panah ke sebelah kanan */
+    transition: transform 0.3s;
+}
+
+/* Perubahan ikon panah saat kotak fitur dibuka */
+.feature-header.open i {
+    transform: rotate(-90deg); /* Memutar ikon panah saat kotak fitur dibuka */
+}
+
+
+@media (min-width: 767px) {
+    /* Tampilan untuk layar dengan lebar minimal 768px */
+    .features {
+         grid-template-columns: repeat(3, 1fr); /* Tiga kolom pada tampilan desktop */
+    }
+    
+    .feature-content {
+        display: none;
+    }
+     
+
+    .feature-header {
+        cursor: pointer;
+    }
+
+    /* CSS untuk mengatur tampilan fitur yang terbuka */
+    .feature-header.open + .feature-content {
+        display: block;
+    } 
+}
+
+ 
+
+
+/* iklan voucher */
+.ads {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 30px;
+    margin-top: 200px;
+}
+
+.ad {
+    flex: 0 0 calc(25% - 20px);  
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);  
+     border-radius: 5px;
+     text-align: center;
+}
+
+.ad img {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;  
+}
+
+/* CSS whyus */
+.why-us-title {
+    font-size: 50px;
+    text-align: center;
+    padding: 30px;
+}
+
+.why-us-isi {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.why-us {
+    display: grid; /* Menggunakan grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Kolom yang akan menyesuaikan lebar */
+    gap: 20px; /* Jarak antara kotak-kotak */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.why-us-box {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.circle-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #ff9900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 10px;
+}
+
+.circle-icon img {
+    max-width: 100%;
+    height: auto;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+@keyframes moveLogo {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi pada hover */
+.circle-icon:hover img {
+    animation: moveLogo 1s infinite;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .why-us {
+        grid-template-columns: 1fr; /* Satu kolom pada tampilan ponsel atau tablet */
+    }
+}
+
+
+/* css logo client */
+.client-judul{
+font-size: 40px;
+font-family: 'Courier New', Courier, monospace;
+text-align: center;
+}
+
+.client-isi{
+     font-family: sans-serif;
+    text-align: center;
+    padding: 10px 10px 0 10px;
+}
+   
+.clients {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+ }
+
+.client-logo {
+    flex: 0 0 calc(25% - 20px);  
+    margin: 10px;
+    text-align: center;
+    position: relative;
+
+}
+@keyframes moveLogo {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);  
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Terapkan animasi pada hover */
+.client-logo:hover img {
+    animation: moveLogo 1s infinite;  
+}
+
+.client-logo img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50px;  
+}
+/* css footer */
+footer {
+    background-color: #606060;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+}
+
+.social-icons img {
+    max-width: 24px;
+    height: auto;
+    margin-right: 10px;
+    margin: 5px 0; 
+}
+
+.footer-center {
+    text-align: left;
+}
+
+.footer-center h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.footer-center p {
+    margin: 5px 0;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+.email-input input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 70%;
+}
+
+.email-input button {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.email-input button:hover {
+    background-color: #ff6600;
+}
+
+/*==================================================================
+                Cek Tarif Css Start
+====================================================================*/
+/* css kotak fitur */
+.container-fitur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px ;
+    padding: 50px;
+    background-color: #fff;
+     position: relative;  
+      
+}
+
+.fitur-cektrf {
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.fitur-cektrf p{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.fitur-cektrf label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.fitur-cektrf input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin-bottom: 10px;
+ }
+
+.fitur-cektrf button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    align-self: flex-start;
+
+}
+
+.fitur-cektrf button:hover {
+    background-color: #ff6600;
+}
+.fitur-cektrf .input-row {
+    display: flex;  
+    align-items: center;
+}
+ 
+.fitur-cektrf .input-row {
+    display: flex;  
+    align-items: center;
+}
+
+.fitur-cektrf .input-row input[type="text"] {
+    flex: 1;  
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;  
+     
+}
+
+.fitur-cektrf .input-row input[type="text"]:last-child {
+
+    flex: 1;  
+}
+/*==================================================================
+                Lacak barang Css Start
+====================================================================*/
+/* css kotak fitur */
+
+.container-lacak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px ;
+    padding: 50px;
+    background-color: #fff;
+     position: relative;  
+      
+}
+
+.fitur-lacak {
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.fitur-lacak p{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.fitur-lacak label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.fitur-lacak input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin-bottom: 10px;
+ }
+
+ .fitur-lacak button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+
+}
+
+.fitur-lacak button:hover {
+    background-color: #ff6600;
+}
+
+/*==================================================================
+                Lokasi Agen Css Start
+====================================================================*/
+.container-lokasi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px ;
+    padding: 50px;
+    background-color: #fff;
+     position: relative;  
+      
+}
+
+.fitur-lokasi {
+    flex: 1;
+    padding: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.fitur-lokasi p{
+    text-align: left;
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+.fitur-lokasi label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.fitur-lokasi input[type="text"] {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin-bottom: 10px;
+ }
+
+ .fitur-lokasi button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+
+}
+
+.fitur-lokasi button:hover {
+    background-color: #ff6600;
+}
+
+
+/* HEADER */
+
+/* .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1000;
+    background: #ffffff1b;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.865);
+    backdrop-filter: blur(5px);
+    padding: 2rem 3%;
+  }
+  
+  .header .logo {
+    color: var(--main-color2);
+    font-size: 2.3rem;
+  }
+  
+  .header .logo i {
+    padding-left: 0.5rem;
+  }
+  
+  .header .navbar {
+    margin-left: auto; Tambahkan margin-left: auto; untuk mendorong menu ke kanan
+  }
+  
+  .header .navbar a {
+    margin: 0 1rem;
+    font-size: 1.7rem;
+    color: var(--main-color2);
+  }
+  
+  .header .btn {
+    margin-top: 0;
+  }
+  
+  #menu-btn {
+    font-size: 3rem;
+    color: var(--main-color2);
+    cursor: pointer;
+    display: none;
+  }
+   */
+  /* HOME */
+  /* a {
+    text-decoration: none;
+  }
+  
+  .home {
+    min-height: 100vh;
+    padding-top: 1rem;
+    background: url(image/lokasi.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.432);
+    background-blend-mode: multiply;
+  }
+  #home .content h3 {
+    color: white;
+  }
+  #home .content a {
+    color: rgb(246, 15, 15);
+  }
+  
+  .home .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .home .row .content {
+    flex: 1 1 42rem;
+  }
+  
+  .home .row .image {
+    flex: 1 1 42rem;
+    padding-top: 10rem;
+    text-align: center;
+   
+  }
+  
+  .home .row .image img {
+    height: 10rem;
+    animation: float 4s linear infinite;
+    padding: 60px;
+    margin-left: 800px;
+  }
+  
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0rem);
+    }
+  
+    50% {
+      transform: translateY(-7rem);
+    }
+  }
+  
+  .home .row .content h3 {
+    font-size: 6.5rem;
+    color: var(--main-color2);
+    text-transform: uppercase;
+  } */
+
+
+  
+   
+/*==================================================================
+                PROFILE CSS Css Start
+====================================================================*/
+ 
+/* Styling Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7e7cb;
+    color: #000000;
+    padding: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.header > .company-info > h1 {
+    color: #E3A32C;
+}
+
+.company-info {
+    flex: 1;
+    max-width: 40%; /* Menambahkan batasan lebar maksimal untuk penjelasan */
+    overflow: hidden;
+    margin-left: 40px;
+}
+
+.company-info > p {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+    line-height: 2;
+ }
+
+.company-logo img {
+    max-width: 500px;
+    
+}
+
+
+
+/* Styling Product Section */
+.product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+   
+}
+
+
+.product-description {
+    flex: 1;
+    max-width: 40%;  
+    overflow: hidden; /* Menggunakan overflow untuk mengatasi teks yang terlalu panjang */
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 40px 40px 0;
+}
+
+.product-description > h2{
+    color: #E3A32C;
+   
+
+}
+.product-image img {
+    max-width: 500px;
+}
+
+.product-description > p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+    line-height: 2;
+}
+
+
+
+
+/* Styling Vision and Mission Section */
+ /* Styling Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #f2f2f2; */
+    padding: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+.vision-mission-description {
+    flex: 1;
+    max-width: 50%; /* Menambahkan batasan lebar maksimal untuk penjelasan */
+    overflow: hidden; /* Menggunakan overflow untuk mengatasi teks yang terlalu panjang */
+margin: 40px 40px 0;
+}
+
+.vision-mission-description > h2{
+    color: #E3A32C;
+}
+
+.vision-mission-description > p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #797a7c;
+}
+
+.vision-mission-image img {
+    max-width: 500px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px){
+/* Styling Header */
+.header {
+    display: flex;
+    z-index: -1;
+    flex-direction: column; /* Ubah arah tampilan menjadi kolom pada tampilan smartphone */
+    align-items: center; /* Pusatkan konten pada tampilan smartphone */
+    background-color: #f7f48f;
+    color: #000000;
+    padding: 20px;
+}
+
+.company-info {
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; /* Pusatkan teks pada tampilan smartphone */
+}
+
+.company-logo img {
+    max-width: 100px;
+    margin-top: 20px; /* Beri jarak atas pada tampilan smartphone */
+}
+
+/* Styling Product Section */
+.product {
+    display: flex;
+    flex-direction: column; /* Ubah arah tampilan menjadi kolom pada tampilan smartphone */
+    align-items: center; /* Pusatkan konten pada tampilan smartphone */
+    padding: 20px;
+     
+}
+
+.product-description{
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; 
+}
+
+.product-image img {
+    max-width: 100px;
+    margin-bottom: 20px;  
+}
+
+/* Styling Vision and Mission Section */
+.vision-mission {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    
+    padding: 20px;
+}
+
+.vision-mission-description{
+    max-width: 100%;  
+    overflow: hidden;
+    text-align:left; 
+}
+
+.vision-mission-image img {
+    max-width: 200px;
+    margin-top: 20px; /* Beri jarak atas pada tampilan smartphone */
+}
+
+ 
+}

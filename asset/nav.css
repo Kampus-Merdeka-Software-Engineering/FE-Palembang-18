@@ -1,0 +1,267 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+     
+}
+
+/* Navbar style */
+.navbar {
+    display: flex;
+     align-items: center;
+    background-color: #F5F7FA;
+    padding: 10px 20px;
+    justify-content: space-between;
+ }
+
+/* .logo {
+    flex: 1;
+}
+.logo a img {
+    width: 50px;
+    height: auto;
+} */
+
+/* .navbar ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+}
+  */
+
+ 
+
+.menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: 50px;
+    
+}
+
+.menu-item {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #E3A32C;
+    transition: color 0.3s ease;
+    
+}
+
+.menu-item a:hover {
+    color: #e74c3c;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+    z-index: 2;
+    text-align: center;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+}
+
+.submenu li {
+    margin:  20px 0;
+
+}
+
+.submenu a {
+    text-decoration: none;
+    color: #E3A32C;
+ }
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.login {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #E3A32C;
+     padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+ }
+
+.login:hover {
+    background-color: #654321;
+}
+
+.signup {
+    text-decoration: none;
+    color: #fff;
+    background-color: #E3A32C;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+ }
+
+.signup:hover {
+    background-color: #654321;
+}
+
+.fa-chevron-down {
+    margin-left: 2px;
+    display: inline-block;
+    transition: transform 0.3s;  
+}
+
+ .menu-item.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Hamburger Menu */
+
+/* .menu-toggle {
+    height: 20px;
+    position: relative;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 85px;
+    height: 27px;
+    top: -2px;
+    left: -30px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: white;
+    width: 28px;
+    height: 3px;
+    border-radius: 100px;
+    transition: all 10ss;
+} */
+
+/* Hamburger Menu Animation */
+/* .menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+    transform: scale-minor(0);
+} */
+
+/* CSS untuk hamburger menu (Responsive) */
+/* @media screen and (max-width: 768px){
+.menu-toggle {
+        display: flex;
+    }
+
+    nav ul {
+        position: relative;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        right: 0;
+        flex-direction: end;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: black;
+        z-index: -1;
+        background-color: rgb(181, 103, 255);
+        transform: translateX(100%);
+        transition: all 10s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 0;
+        transform: translateX(0);
+    }
+} */
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        z-index: 1;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu-item {
+        margin: 10px 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-right: 20px;
+    }
+
+    .submenu {
+        position: relative;
+    }
+
+    .submenu.active {
+        display: block;
+    }
+}
+
+/* @media screen and (max-width: 576px){
+    .menu-toggle{
+        display: flex;
+    }
+.menu > ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    transform: translateY(100%);
+    transition: all 1s;
+  }
+
+.menu ul.slide {
+    transform: translateY(0);
+  }
+
+} */
