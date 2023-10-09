@@ -78,21 +78,23 @@
 <!-- kotak fitur start -->
 <div class="container-fitur">
     <div class="fitur-cektrf">
-        <label for="origin">Cek Tarif:</label> 
-        <div class="input-row">
-            <input type="text" id="Asal" placeholder="Kota asal">
-            <input type="text" id="Tujuan" placeholder="Kota tujuan">
-            <input type="text" id="Berat"   placeholder="Berat barang (KG)">
-            <div class="weight-controls">
-                <button class="plus">+</button>
-                <button class="minus">-</button>
-            </div>
-        </div>
+        <label  >Hitung Jarak:</label> <!-- Modifikasi label -->
         <p>Masukkan Asal, Tujuan, dan berat barang Anda dalam KG</p>
-        <button>Cek Tarif</button>
+        <div class="input-row">
+            <input type="text" id="origin" placeholder="Kota asal">
+            <input type="text" id="destination" placeholder="Kota tujuan">
+            <button onclick="calculateDistance()">Hitung Jarak</button>
+    <p>Jarak: <span id="distance"></span> Km</p>  
+        </div>
+        <div class="input-row">
+            <label for="weight">Berat Barang (kg):</label>
+            <input type="number" id="weight" step="0.01" required>
+        </div>
+        
+        
+        <button onclick="calculateShippingCost()">Hitung Tarif</button>
+    <p>Biaya pengiriman adalah: <span id="shippingCost"></span></p>
     </div>
-</div>
-
 </div>
 <!-- kotak fitur end -->
 
@@ -123,6 +125,78 @@
 <!-- footer end -->
 <!-- <script src="asset/js/navbar.js"></script> -->
 <script src="burger.js"></script>
+<script>
+    let originInput = document.getElementById('origin');
+    let destinationInput = document.getElementById('destination');
+    let distanceOutput = document.getElementById('distance');
+    let geocoder = new google.maps.Geocoder();
 
+    function calculateDistance() {
+        let origin = originInput.value;
+        let destination = destinationInput.value;
+
+        geocoder.geocode({ 'address': origin }, function (results, status) {
+            if (status === 'OK') {
+                let originLatLng = results[0].geometry.location;
+
+                geocoder.geocode({ 'address': destination }, function (results, status) {
+                    if (status === 'OK') {
+                        let destinationLatLng = results[0].geometry.location;
+
+                        let service = new google.maps.DistanceMatrixService();
+                        service.getDistanceMatrix(
+                            {
+                                origins: [originLatLng],
+                                destinations: [destinationLatLng],
+                                travelMode: 'DRIVING'
+                            },
+                            function (response, status) {
+                                if (status === 'OK') {
+                                    let distanceText = response.rows[0].elements[0].distance.text;
+                                    distanceText = distanceText.replace(/[^\d.-]/g, '').replace(',', '.');
+
+                                    let distanceNumeric = parseFloat(distanceText);
+                                    distanceOutput.textContent = distanceNumeric;
+                                    console.log(distanceNumeric);
+                                    document.getElementById('distance').value = distanceNumeric;
+                                } else {
+                                    alert('Gagal menghitung jarak: ' + status);
+                                }
+                            }
+                        );
+                    } else {
+                        alert('Gagal menemukan lokasi tujuan: ' + status);
+                    }
+                });
+            } else {
+                alert('Gagal menemukan lokasi asal: ' + status);
+            }
+        });
+    }
+
+    function calculateShippingCost() {
+
+        const weight = parseFloat(document.getElementById('weight').value);
+        const distance = parseFloat(document.getElementById('distance').value);
+        const ratePerKg = 5000;
+        const ratePerKm = 100;
+
+        console.log(`ini weight: ${weight}, ini distance : ${distance}`);
+
+        const shippingCost = (ratePerKm * distance) + (ratePerKg * weight);
+        console.log(`shipping cost : ${shippingCost}`);
+        // document.getElementById('shippingCost').textContent = shippingCost.toFixed(2);
+        // console.log(`shipping cost : ${shippingCost.toFixed(2)}`);
+
+        // const numb = 1000000;
+        const format = shippingCost.toString().split('').reverse().join('');
+        const convert = format.match(/\d{1,3}/g);
+        const rupiah = 'Rp ' + convert.join('.').split('').reverse().join('') + ',00'
+
+        console.log(rupiah)
+
+        document.getElementById('shippingCost').textContent = rupiah;
+    }
+</script>
 </body>
 </html>
