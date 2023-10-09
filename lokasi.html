@@ -73,52 +73,63 @@
 <!-- konten gambar end -->
 
 <!-- kotak fitur start -->
-<div class="container-lokasi">
+<!-- <div class="container-lokasi">
     <div class="fitur-lokasi">
         <label for="origin">Cari lokasi Agen:</label>
         <p>Cari Agen Terdekat</p> 
-        <input type="text" id="Lacak" placeholder=" ">
-        <button onclick="cariLokasi()">Cari Lokasi</button>
+            <input type="text" id="Lacak" placeholder=" ">  
+  
+        <button>Cari Lokasi</button>
     </div>
-</div>
+</div> -->
 
-<div id="hasil"></div>
+ 
+    <div class="container-lokasi">
+        <div class="fitur-lokasi">
+            <label for="origin">Cari data:</label>
+            <p>Masukkan Nama Kecamatan:</p> 
+            <input type="text" id="Lacak" placeholder="Nama Kecamatan">  
+            <button onclick="cariData()">Cari Data</button>
+        </div>
+    </div>
+    
+    <div id="hasil"></div>
 
-<script>
-    function cariLokasi() {
-        // Ambil nilai dari input
-        var query = document.getElementById('Lacak').value;
+    <script>
+        function cariData() {
+            // Ambil nilai dari input
+            var kecamatan = document.getElementById('Lacak').value;
 
-        // URL API
-        var apiUrl = 'https://be-palembang-18-production.up.railway.app/api/office?query=' + encodeURIComponent(query);
+            // URL API
+            var apiUrl = 'https://be-palembang-18-production.up.railway.app/api/office?kecamatan=' + encodeURIComponent(kecamatan);
 
-        // Fetch data dari API
-        fetch(apiUrl)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                // Tampilkan hasil dalam elemen dengan id 'hasil'
-                var hasilElemen = document.getElementById('hasil');
-                hasilElemen.innerHTML = '';
+            // Fetch data dari API
+            fetch(apiUrl)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    // Tampilkan hasil dalam elemen dengan id 'hasil'
+                    var hasilElemen = document.getElementById('hasil');
+                    hasilElemen.innerHTML = '';
 
-                if (data.length === 0) {
-                    hasilElemen.innerHTML = 'Tidak ada hasil yang ditemukan.';
-                } else {
-                    for (var i = 0; i < data.length; i++) {
-                        var office = data[i];
-                        var officeInfo = 'Kabupaten ' + office.kabupaten + '<br>';
-                        officeInfo += 'Kecamatan: ' + office.kecamatan + '<br>';
-                        officeInfo += 'Alamat: ' + office.alamat + '<br><br>';
-                        hasilElemen.innerHTML += officeInfo;
+                    if (data.length === 0) {
+                        hasilElemen.innerHTML = 'Tidak ada hasil yang ditemukan.';
+                    } else {
+                        for (var i = 0; i < data.length; i++) {
+                            var office = data[i];
+                            var officeInfo = 'Kabupaten: ' + office.kabupaten + '<br>';
+                            officeInfo += 'Kecamatan: ' + office.kecamatan + '<br>';
+                            officeInfo += 'Kota: ' + office.kota + '<br>';
+                            hasilElemen.innerHTML += officeInfo + '<br>';
+                        }
                     }
-                }
-            })
-            .catch(function(error) {
-                console.error('Terjadi kesalahan:', error);
-            });
-    }
-</script>
+                })
+                .catch(function(error) {
+                    console.error('Terjadi kesalahan:', error);
+                });
+        }
+    </script>
  
 <!-- kotak fitur end -->
 
