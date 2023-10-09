@@ -35,3 +35,32 @@ document.addEventListener("click", (e) => {
         }
     });
 });
+
+
+// function lacak(event){
+//     const inputlacak = document.querySelector("#Lacak")
+//     const value = inputlacak.value
+//     fetch (`${BASE_URL}/`)
+// }
+
+function lacak() {
+    const nomorResi = document.getElementById("Lacak").value;
+    const apiUrl = `https://be-palembang-18-production.up.railway.app/api/order/${nomorResi}`;
+  
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        // Di sini Anda dapat mengelola data pelacakan yang diterima dari backend
+        const hasilPelacakan = document.getElementById("hasilPelacakan");
+        hasilPelacakan.innerHTML = `
+          <h2>Hasil Pelacakan</h2>
+          <p>Nomor Resi: ${no_resi}</p>
+          <p>Status: ${status}</p>
+          <p>Deskripsi: ${estimatedTimeOfDeparture}</p>
+        `;
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }
+  
