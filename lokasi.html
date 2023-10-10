@@ -83,53 +83,21 @@
     </div>
 </div> -->
 
- 
-    <div class="container-lokasi">
-        <div class="fitur-lokasi">
-            <label for="origin">Cari data:</label>
-            <p>Masukkan Nama Kecamatan:</p> 
-            <input type="text" id="Lacak" placeholder="Nama Kecamatan">  
-            <button onclick="cariData()">Cari Data</button>
-        </div>
+<div class="container-lokasi">
+    <div class="fitur-lokasi">
+      <label for="kecamatan">Cari Lokasi:</label>
+      <p>Masukkan Nama Kecamatan:</p>
+      <input type="text" id="kecamatan" placeholder="Nama Kecamatan" />
+      <button id="cariButton">Cari</button>
+      <button id="resetButton">Reset</button>
     </div>
+    <div id="hasilCari" class="hasil-cari">
+      <h2>Hasil Pencarian</h2>
+      <p><strong>Alamat:</strong> <span id="alamatOrder"></span></p>
+    </div>
+  </div>
     
-    <div id="hasil"></div>
-
-    <script>
-        function cariData() {
-            // Ambil nilai dari input
-            var kecamatan = document.getElementById('Lacak').value;
-
-            // URL API
-            var apiUrl = 'https://gleaming-tuna-ring.cyclic.app/api/office?kecamatan=' + encodeURIComponent(kecamatan);
-
-            // Fetch data dari API
-            fetch(apiUrl)
-                .then(function(response) {
-                    return response.json();
-                })
-                .then(function(data) {
-                    // Tampilkan hasil dalam elemen dengan id 'hasil'
-                    var hasilElemen = document.getElementById('hasil');
-                    hasilElemen.innerHTML = '';
-
-                    if (data.length === 0) {
-                        hasilElemen.innerHTML = 'Tidak ada hasil yang ditemukan.';
-                    } else {
-                        for (var i = 0; i < data.length; i++) {
-                            var office = data[i];
-                            var officeInfo = 'Kabupaten: ' + office.kabupaten + '<br>';
-                            officeInfo += 'Kecamatan: ' + office.kecamatan + '<br>';
-                            officeInfo += 'Kota: ' + office.kota + '<br>';
-                            hasilElemen.innerHTML += officeInfo + '<br>';
-                        }
-                    }
-                })
-                .catch(function(error) {
-                    console.error('Terjadi kesalahan:', error);
-                });
-        }
-    </script>
+     
  
 <!-- kotak fitur end -->
 
@@ -159,6 +127,7 @@
 </footer>
 <!-- footer end -->
 <script src="burger.js"></script>
+<script src="lokasi.js"></script>
 
 </body>
 </html>

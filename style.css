@@ -860,6 +860,72 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 50px 0px;
+    padding: 20px; /* Mengurangi padding untuk tampilan yang lebih ringkas */
+    background-color: #fff;
+    position: relative;
+}
+
+.fitur-lokasi {
+    flex: 1;
+    padding: 20px; /* Mengurangi padding untuk tampilan yang lebih ringkas */
+    text-align: left; /* Mengubah teks menjadi kiri */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.fitur-lokasi p {
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+.fitur-lokasi label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.fitur-lokasi input[type="text"] {
+    width: 100%; /* Lebar input penuh pada semua perangkat */
+    padding: 10px;
+    border: 1px solid #121212;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Tombol diubah menjadi tampilan yang lebih ringkas */
+.fitur-lokasi button {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.fitur-lokasi button:hover {
+    background-color: #ff6600;
+}
+
+/* Media query untuk tampilan responsif */
+@media (max-width: 567px) {
+    .container-lokasi {
+        flex-direction: column;
+    }
+
+    .fitur-lokasi {
+        margin-bottom: 20px;
+    }
+}
+/* .container-lokasi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin: 50px 0px ;
     padding: 50px;
     background-color: #fff;
@@ -916,7 +982,20 @@ footer {
 
 .fitur-lokasi button:hover {
     background-color: #ff6600;
+} */
+/* CSS yang sudah ada tetap sama */
+
+.hasil-cari {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: none; /* Sembunyikan kotak hasil pencarian awalnya */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 /* HEADER */
