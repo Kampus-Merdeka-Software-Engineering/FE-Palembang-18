@@ -3,73 +3,153 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-  }
-  
-  #sidebar {
+}
+
+#sidebar {
     width: 250px;
     position: fixed;
     top: 0;
     left: 0;
     height: 100%;
-    background-color: #333;
+    background-color:  #ff6600;
     padding-top: 20px;
     color: #fff;
-  }
-  
-  #sidebar ul {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#sidebar ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  #sidebar ul li {
+}
+
+#sidebar ul li {
     padding: 10px;
     text-align: center;
-  }
-  
-  #sidebar ul li:hover {
+}
+
+#sidebar ul li:hover {
     background-color: #555;
-  }
-  
-  #content {
+}
+
+#content {
     margin-left: 250px;
     padding: 20px;
-  }
-  
-  h1 {
+}
+
+h1 {
     text-align: center;
-  }
-  
-  #addOrderButton {
-    background-color: #007bff;
+}
+
+#addOrderButton {
+    background-color: #ff6600;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-  }
-  
-  #orderTable {
+    border-radius: 5px;
+}
+
+#orderTable {
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  #orderTable th, #orderTable td {
+}
+
+#orderTable th, #orderTable td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
-  }
-  
-  #orderTable th {
+}
+
+#orderTable th {
     background-color: #007bff;
     color: #fff;
-  }
-  
-  #orderTable tbody tr:nth-child(even) {
+}
+
+#orderTable tbody tr:nth-child(even) {
     background-color: #f2f2f2;
-  }
-  
-  #addOrderButton:hover {
+}
+
+#addOrderButton:hover {
     background-color: #0056b3;
-  }
-  
+}
+
+#addUpdateButton {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+input[type="datetime-local"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style alert message */
+.alert {
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: none;
+}
