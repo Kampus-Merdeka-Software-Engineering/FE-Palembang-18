@@ -75,16 +75,29 @@
 <!-- konten gambar end -->
 
 <!-- kotak fitur start -->
-<div class="container-lacak">
-    <div class="fitur-lacak">
-        <label for="origin">Lacak pengiriman:</label>
-        <p>Masukkan Nomor Resi Pengiriman</p> 
-            <input type="text" id="Lacak" placeholder="Masukkan Resi Barang Anda">  
-        <button oneclick="lacak(event)" >Lacak</button>
-        
+ 
+ 
+
+<div class="container-lokasi">
+    <div class="fitur-lokasi">
+      <label for="no_resi">Cari Lokasi:</label>
+      <p>Masukkan Nama Kecamatan:</p>
+      <input type="text" id="no_resi" placeholder="Nama Kecamatan" />
+      <button id="cariButton">Cari</button>
+      <button id="resetButton">Reset</button>
     </div>
-</div>
-<div id="hasilPelacakan"></div>
+    <div id="hasilCari" class="hasil-cari">
+      <h2>Hasil Pencarian</h2>
+      <p><strong>Status:</strong> <span id="statusOrder"></span></p>
+        <p><strong>Nomor Resi:</strong> <span id="noResi"></span></p>
+        <p><strong>Alamat Pengirim:</strong> <span id="senderAddress"></span></p>
+        <p><strong>Nama Penerima:</strong> <span id="receiptName"></span></p>
+        <p><strong>Alamat Penerima:</strong> <span id="receiptAddress"></span></p>
+        <p><strong>Estimasi Waktu Kedatangan:</strong> <span id="estimatedTimeOfArrival"></span></p>
+    </div>
+  </div>
+    
+ 
 
 <!-- kotak fitur end -->
 
@@ -114,6 +127,7 @@
 </footer>
 <!-- footer end -->
 <script src="burger.js"></script>
+<script src="lacak.js"></script>
 
 </body>
 </html>

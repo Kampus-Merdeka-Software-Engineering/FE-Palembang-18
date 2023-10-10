@@ -790,18 +790,18 @@ footer {
                 Lacak barang Css Start
 ====================================================================*/
 /* css kotak fitur */
-
+ /* CSS untuk kontainer */
 .container-lacak {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 50px 0px ;
+    margin: 50px 0;
     padding: 50px;
     background-color: #fff;
-     position: relative;  
-      
+    position: relative;
 }
 
+/* CSS untuk kotak fitur */
 .fitur-lacak {
     flex: 1;
     padding: 50px;
@@ -814,12 +814,12 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-
-.fitur-lacak p{
+.fitur-lacak p {
     text-align: left;
     font-size: 12px;
     margin-bottom: 20px;
 }
+
 .fitur-lacak label {
     display: block;
     margin: 10px 0;
@@ -833,9 +833,11 @@ footer {
     border: 1px solid #121212;
     border-radius: 5px;
     margin-bottom: 10px;
- }
+}
 
- .fitur-lacak button {
+/* Tombol Cari dan Reset */
+.fitur-lacak .cari-button,
+.fitur-lacak #resetButton {
     background-color: #ff9900;
     color: white;
     padding: 10px 20px;
@@ -846,11 +848,48 @@ footer {
     margin-bottom: 10px;
     margin-top: 10px;
     align-self: flex-start;
-
 }
 
-.fitur-lacak button:hover {
+.fitur-lacak .cari-button:hover,
+.fitur-lacak #resetButton:hover {
     background-color: #ff6600;
+}
+
+/* CSS untuk kotak hasil pencarian */
+.hasil-pencarian {
+    flex: 1;
+    padding: 50px;
+    text-align: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10px;
+    display: none; /* Awalnya tersembunyi */
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Media query untuk tampilan responsif */
+@media (max-width: 567px) {
+    .container-lacak {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .fitur-lacak {
+        width: 100%;
+    }
+
+    .hasil-pencarian {
+        width: 100%;
+        margin-top: 20px; /* Jarak antara kotak fitur dan hasil pencarian */
+    }
+
+    /* Tombol Reset akan berada di bawah tombol Cari */
+    .fitur-lacak #resetButton {
+        align-self: center; /* Tengah horizontal */
+        margin-top: 10px;
+        margin-left: 0; /* Menghapus margin kiri untuk tombol Reset */
+    }
 }
 
 /*==================================================================
@@ -922,69 +961,7 @@ footer {
         margin-bottom: 20px;
     }
 }
-/* .container-lokasi {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 50px 0px ;
-    padding: 50px;
-    background-color: #fff;
-     position: relative;  
-      
-}
-
-.fitur-lokasi {
-    flex: 1;
-    padding: 50px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.fitur-lokasi p{
-    text-align: left;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-.fitur-lokasi label {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-    text-align: left;
-}
-
-.fitur-lokasi input[type="text"] {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #121212;
-    border-radius: 5px;
-    margin-bottom: 10px;
- }
-
- .fitur-lokasi button {
-    background-color: #ff9900;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    align-self: flex-start;
-
-}
-
-.fitur-lokasi button:hover {
-    background-color: #ff6600;
-} */
-/* CSS yang sudah ada tetap sama */
-
+ 
 .hasil-cari {
     flex: 1;
     padding: 20px;
@@ -998,117 +975,7 @@ footer {
 
 
 
-/* HEADER */
-
-/* .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 1000;
-    background: #ffffff1b;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.865);
-    backdrop-filter: blur(5px);
-    padding: 2rem 3%;
-  }
-  
-  .header .logo {
-    color: var(--main-color2);
-    font-size: 2.3rem;
-  }
-  
-  .header .logo i {
-    padding-left: 0.5rem;
-  }
-  
-  .header .navbar {
-    margin-left: auto; Tambahkan margin-left: auto; untuk mendorong menu ke kanan
-  }
-  
-  .header .navbar a {
-    margin: 0 1rem;
-    font-size: 1.7rem;
-    color: var(--main-color2);
-  }
-  
-  .header .btn {
-    margin-top: 0;
-  }
-  
-  #menu-btn {
-    font-size: 3rem;
-    color: var(--main-color2);
-    cursor: pointer;
-    display: none;
-  }
-   */
-  /* HOME */
-  /* a {
-    text-decoration: none;
-  }
-  
-  .home {
-    min-height: 100vh;
-    padding-top: 1rem;
-    background: url(image/lokasi.png) no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgba(0, 0, 0, 0.432);
-    background-blend-mode: multiply;
-  }
-  #home .content h3 {
-    color: white;
-  }
-  #home .content a {
-    color: rgb(246, 15, 15);
-  }
-  
-  .home .row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-  
-  .home .row .content {
-    flex: 1 1 42rem;
-  }
-  
-  .home .row .image {
-    flex: 1 1 42rem;
-    padding-top: 10rem;
-    text-align: center;
-   
-  }
-  
-  .home .row .image img {
-    height: 10rem;
-    animation: float 4s linear infinite;
-    padding: 60px;
-    margin-left: 800px;
-  }
-  
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0rem);
-    }
-  
-    50% {
-      transform: translateY(-7rem);
-    }
-  }
-  
-  .home .row .content h3 {
-    font-size: 6.5rem;
-    color: var(--main-color2);
-    text-transform: uppercase;
-  } */
-
-
+ 
   
    
 /*==================================================================
