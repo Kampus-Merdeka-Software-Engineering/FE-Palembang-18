@@ -80,125 +80,58 @@
 <!-- kotak fitur start -->
 <div class="container-fitur">
     <div class="fitur-cektrf">
-        <label  >Hitung Jarak:</label> <!-- Modifikasi label -->
-        <p>Masukkan Asal, Tujuan, dan berat barang Anda dalam KG</p>
-        <div class="input-row">
-            <input type="text" id="origin" placeholder="Kota asal">
-            <input type="text" id="destination" placeholder="Kota tujuan">
-            <button onclick="calculateDistance()">Hitung Jarak</button>
-    <p>Jarak: <span id="distance"></span> Km</p>  
-        </div>
-        <div class="input-row">
-            <label for="weight">Berat Barang (kg):</label>
-            <input type="number" id="weight" step="0.01" required>
-        </div>
-        
-        
-        <button onclick="calculateShippingCost()">Hitung Tarif</button>
-    <p>Biaya pengiriman adalah: <span id="shippingCost"></span></p>
+        <h1>Kalkulator Ongkir</h1>
+    
+        <label for="jarak">Jarak (km):</label>
+        <input type="number" id="jarak" placeholder="Masukkan jarak dalam km"><br>
+    
+        <label for="berat">Berat Barang (kg):</label>
+        <input type="number" id="berat" placeholder="Masukkan berat dalam kg"><br>
+    
+        <label for="jenisOngkir">Jenis Ongkir:</label>
+        <select id="jenisOngkir">
+            <option value="express">Express</option>
+            <option value="reguler">Reguler</option>
+            <option value="hemat">Hemat</option>
+        </select><br>
+    
+        <button onclick="hitungOngkir()">Hitung Ongkir</button>
+    
+        <p id="hasilOngkir"></p>
     </div>
 </div>
-<!-- kotak fitur end -->
 
-<!-- footer start -->
-<footer>
-    <div class="footer-left">
-        <p>&copy; 2023 LemparAja</p>
-        <div class="social-icons">
-            <img src="image/Bukalapak.png" alt="Facebook">
-            <img src="twitter-icon.png" alt="Twitter">
-            <img src="instagram-icon.png" alt="Instagram">
-        </div>
-    </div>
-    <div class="footer-center">
-        <h4>LemparAja Company</h4>
-        <p>Support</p>
-        <p>About Us</p>
-        <p>Blog</p>
-    </div>
-    <div class="footer-right">
-        <p>Stay up to date</p>
-        <div class="email-input">
-            <input type="email" placeholder="Enter your email">
-            <button>Subscribe</button>
-        </div>
-    </div>
-</footer>
-<!-- footer end -->
-<!-- <script src="asset/js/navbar.js"></script> -->
-<script src="burger.js"></script>
 <script>
-    let originInput = document.getElementById('origin');
-    let destinationInput = document.getElementById('destination');
-    let distanceOutput = document.getElementById('distance');
-    let geocoder = new google.maps.Geocoder();
+    function hitungOngkir() {
+        const jarakKm = parseFloat(document.getElementById('jarak').value);
+        const beratKg = parseFloat(document.getElementById('berat').value);
+        const jenisOngkir = document.getElementById('jenisOngkir').value;
 
-    function calculateDistance() {
-        let origin = originInput.value;
-        let destination = destinationInput.value;
+        if (isNaN(jarakKm) || isNaN(beratKg)) {
+            alert('Masukkan jarak dan berat yang valid.');
+            return;
+        }
 
-        geocoder.geocode({ 'address': origin }, function (results, status) {
-            if (status === 'OK') {
-                let originLatLng = results[0].geometry.location;
+        let biayaJarak = 0;
+        let biayaPerKg = 0;
 
-                geocoder.geocode({ 'address': destination }, function (results, status) {
-                    if (status === 'OK') {
-                        let destinationLatLng = results[0].geometry.location;
+        if (jenisOngkir === 'express') {
+            biayaJarak = Math.floor(jarakKm / 500) * 2000;
+            biayaPerKg = 10000;
+        } else if (jenisOngkir === 'reguler') {
+            biayaJarak = Math.floor(jarakKm / 500) * 2000;
+            biayaPerKg = 8000;
+        } else if (jenisOngkir === 'hemat') {
+            biayaJarak = Math.floor(jarakKm / 500) * 2000;
+            biayaPerKg = 5000;
+        }
 
-                        let service = new google.maps.DistanceMatrixService();
-                        service.getDistanceMatrix(
-                            {
-                                origins: [originLatLng],
-                                destinations: [destinationLatLng],
-                                travelMode: 'DRIVING'
-                            },
-                            function (response, status) {
-                                if (status === 'OK') {
-                                    let distanceText = response.rows[0].elements[0].distance.text;
-                                    distanceText = distanceText.replace(/[^\d.-]/g, '').replace(',', '.');
+        const biayaBerat = beratKg * biayaPerKg;
+        const totalOngkir = biayaJarak + biayaBerat;
 
-                                    let distanceNumeric = parseFloat(distanceText);
-                                    distanceOutput.textContent = distanceNumeric;
-                                    console.log(distanceNumeric);
-                                    document.getElementById('distance').value = distanceNumeric;
-                                } else {
-                                    alert('Gagal menghitung jarak: ' + status);
-                                }
-                            }
-                        );
-                    } else {
-                        alert('Gagal menemukan lokasi tujuan: ' + status);
-                    }
-                });
-            } else {
-                alert('Gagal menemukan lokasi asal: ' + status);
-            }
-        });
-    }
-
-    function calculateShippingCost() {
-
-        const weight = parseFloat(document.getElementById('weight').value);
-        const distance = parseFloat(document.getElementById('distance').value);
-        const ratePerKg = 5000;
-        const ratePerKm = 100;
-
-        console.log(`ini weight: ${weight}, ini distance : ${distance}`);
-
-        const shippingCost = (ratePerKm * distance) + (ratePerKg * weight);
-        console.log(`shipping cost : ${shippingCost}`);
-        // document.getElementById('shippingCost').textContent = shippingCost.toFixed(2);
-        // console.log(`shipping cost : ${shippingCost.toFixed(2)}`);
-
-        // const numb = 1000000;
-        const format = shippingCost.toString().split('').reverse().join('');
-        const convert = format.match(/\d{1,3}/g);
-        const rupiah = 'Rp ' + convert.join('.').split('').reverse().join('') + ',00'
-
-        console.log(rupiah)
-
-        document.getElementById('shippingCost').textContent = rupiah;  
+        document.getElementById('hasilOngkir').textContent = `Ongkir (${jenisOngkir}): Rp. ${totalOngkir}`;
     }
 </script>
+
 </body>
 </html>
