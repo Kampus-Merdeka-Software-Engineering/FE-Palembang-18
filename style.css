@@ -575,93 +575,7 @@ footer {
     background-color: #ff6600;
 }
 
-/*==================================================================
-                Cek Tarif Css Start
-====================================================================*/
-/* css kotak fitur */
-/* .container-fitur {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 50px 0px ;
-    padding: 50px;
-    background-color: #fff;
-     position: relative;  
-      
-}
-
-.fitur-cektrf {
-    flex: 1;
-    padding: 50px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0 10px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-
-.fitur-cektrf p{
-    text-align: left;
-    font-size: 12px;
-    margin-bottom: 20px;
-}
-.fitur-cektrf label {
-    display: block;
-    margin: 10px 0;
-    font-weight: bold;
-    text-align: left;
-}
-
-.fitur-cektrf input[type="text"] {
-    width: 50%;
-    padding: 10px;
-    border: 1px solid #121212;
-    border-radius: 5px;
-    margin-bottom: 10px;
- }
-
-.fitur-cektrf button {
-    background-color: #ff9900;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-bottom: 10px;
-    align-self: flex-start;
-
-}
-
-.fitur-cektrf button:hover {
-    background-color: #ff6600;
-}
-.fitur-cektrf .input-row {
-    display: flex;  
-    align-items: center;
-}
  
-.fitur-cektrf .input-row {
-    display: flex;  
-    align-items: center;
-}
-
-.fitur-cektrf .input-row input[type="text"] {
-    flex: 1;  
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 20px;  
-     
-}
-
-.fitur-cektrf .input-row input[type="text"]:last-child {
-
-    flex: 1;  
-} */
 
 /*==================================================================
                 Cek Tarif Css Start
@@ -721,6 +635,7 @@ footer {
     font-weight: bold;
     margin-bottom: 10px;
     align-self: flex-start;
+    margin-top: 5px;
 
 }
 
