@@ -1,77 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Orders</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
-            <img src="icon.png" alt="Logo">
-        </div>
-        <div class="sidebar-header">
-            <h1>Admin Panel</h1>
-        </div>
-        <button class="toggle-sidebar">
-            <div class="bar"></div>
-             <div class="bar"></div>
-             <div class="bar"></div>
-         </button>
-        <!-- Tombol "Show Sidebar" untuk smartphone dan tablet -->
-        <button class="show-sidebar">Show Sidebar</button>
-        <ul class="sidebar-menu">
-            <li><a href="#"><img src="/image/Bukalapak.png" alt="Orders">Orders</a></li>
-            <li><a href="#"><img src="/image/sopi.png" alt="Rates">Rates</a></li>
-            <li><a href="#"><img src="/image/logo2.png" alt="Reports">Reports</a></li>
-        </ul>
+    <div id="sidebar">
+        <ul>
+            <li>Orders</li>
+            <li>Rates</li>
+            <li>Report</li>
+         </ul>
     </div>
-    <div class="content">
-        <header>
-            <h1>DATA ORDER BARANG</h1>
-            <div class="actions">
-                <button class="btn">Laporan</button>
-                <button class="btn">Tambah</button>
-            </div>
-             
-        </header>
-        <div class="Search">
-            <select>
-                <option>Show 10 entries</option>
-                <option>Show 20 entries</option>
-                <option>Show 50 entries</option>
-            </select>
-            <input type="text" placeholder="Search...">
-        </div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>No.resi</th>
-                        <th>Status</th>
-                        <th>Fee</th>
-                        <th>Deskripsi</th>
-                        <th>Asal</th>
-                        <th>Tujuan</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Data dari database akan ditampilkan di sini -->
-                </tbody>
-            </table>
-        </div>
 
-    <script src="asset-admin/script.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-          $('#tabeluser').DataTable({
-            searching: true,
-          });
+    <div id="content">
+        <h1>Daftar Order</h1>
+        <button id="addOrderButton">Tambah Order</button>
+        <button id="addUpdateButton">Tambah Pesanan</button>
+        
+
+        <table id="orderTable">
+            <thead>
+                <tr>
+                    <th>No Resi</th>
+                    <th>Fee</th>
+                    <th>Sender Name</th>
+                    <th>Status</th>
+                    <th>Sender Phone</th>
+                    <th>Sender Address</th>
+                    <th>Receipt Name</th>
+                    <th>Receipt Phone</th>
+                    <th>Receipt Address</th>
+                    <th>Estimated Time of Departure</th>
+                    <th>Estimated Time of Arrival</th>
+                    <th>Admin Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan ditampilkan di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function untuk menampilkan data dalam tabel
+        function displayOrders(orders) {
+            const tableBody = document.querySelector("#orderTable tbody");
+            tableBody.innerHTML = "";
+
+            orders.forEach((order) => {
+                const row = tableBody.insertRow();
+                row.innerHTML = `
+                    <td>${order.no_resi}</td>
+                    <td>${order.fee || ""}</td>
+                    <td>${order.senderName}</td>
+                    <td>${order.status}</td>
+                    <td>${order.senderPhone}</td>
+                    <td>${order.senderaddress}</td>
+                    <td>${order.receiptName}</td>
+                    <td>${order.receiptPhone}</td>
+                    <td>${order.receiptaddress}</td>
+                    <td>${new Date(order.estimatedTimeOfDeparture).toLocaleString()}</td>
+                    <td>${order.estimatedTimeOfArrival ? new Date(order.estimatedTimeOfArrival).toLocaleString() : ""}</td>
+                    <td>${order.adminName}</td>
+                `;
+            });
+        }
+
+        // Ambil data dari API dan tampilkan saat halaman dimuat
+        fetch("https://gleaming-tuna-ring.cyclic.app/api/order")
+            .then((response) => response.json())
+            .then((data) => {
+                const orders = data.data;
+                displayOrders(orders);
+            })
+            .catch((error) => {
+                console.error("Gagal mengambil data:", error);
+            });
+
+        // Tambahkan event listener untuk tombol "Tambah Order"
+        document.getElementById("addOrderButton").addEventListener("click", function () {
+            // Redirect atau tampilkan form tambah data
+            window.location.href = "tambah_order.html";
         });
-      </script>
+
+        // Tambahkan event listener untuk tombol "Tambah Order"
+        document.getElementById("addUpdateButton").addEventListener("click", function () {
+            // Redirect atau tampilkan form tambah data
+            window.location.href = "update_status.html";
+        });
+    </script>
 </body>
 </html>

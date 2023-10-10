@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order Status</title>
+</head>
+<body>
+    <h1>Update Order Status</h1>
+    <form id="updateStatusForm">
+        <label for="no_resi">No Resi:</label>
+        <input type="text" id="no_resi" name="no_resi" required><br><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Cancelled">Cancelled</option>
+        </select><br><br>
+
+        <input type="submit" value="Update Status">
+    </form>
+
+    <script>
+        document.getElementById("updateStatusForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const formData = {
+                no_resi: document.getElementById("no_resi").value,
+                status: document.getElementById("status").value,
+            };
+
+            // Send data to the API using the PUT method to update the status
+            fetch(`https://gleaming-tuna-ring.cyclic.app/api/order/${formData.no_resi}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("Status berhasil diupdate:", data);
+                    
+                    // Tampilkan pesan sukses
+                    alert("Status berhasil diupdate!");
+                    
+                    // Redirect ke halaman beranda
+                    window.location.href = "orders.html";
+                })
+                .catch((error) => {
+                    console.error("Gagal mengupdate status:", error);
+                    // Tampilkan pesan error
+                });
+        });
+    </script>
+</body>
+</html>
