@@ -127,6 +127,16 @@
 <!-- footer end -->
 <script src="burger.js"></script>
 <script src="lacak.js"></script>
+<script>
+    // Ambil nilai input dari parameter URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const inputValue = urlParams.get('input');
 
+    // Gunakan nilai input
+    if (inputValue) {
+        // Lakukan sesuatu dengan nilai input, misalnya menampilkan di halaman atau memprosesnya.
+        document.getElementById('result').textContent = `Hasil Lacak Pengiriman: ${inputValue}`;
+    }
+</script>
 </body>
 </html>

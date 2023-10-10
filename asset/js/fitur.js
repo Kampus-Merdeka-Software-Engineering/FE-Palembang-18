@@ -1,46 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     const featureHeaders = document.querySelectorAll(".feature-header");
-
-//     featureHeaders.forEach(header => {
-//         header.addEventListener("click", function () {
-//             const contentId = this.getAttribute("data-toggle");
-//             const content = document.getElementById(contentId);
-
-//             if (content.style.display === "block") {
-//                 content.style.display = "none";
-//             } else {
-//                 content.style.display = "block";
-//             }
-//         });
-//     });
-// });
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const featureHeaders = document.querySelectorAll(".feature-header");
-//     const featureContents = document.querySelectorAll(".feature-content");
-
-//     featureHeaders.forEach(header => {
-//         header.addEventListener("click", function () {
-//             const contentId = this.getAttribute("data-toggle");
-//             const content = document.getElementById(contentId);
-
-//             // Menutup semua fitur yang terbuka terlebih dahulu
-//             featureContents.forEach(feature => {
-//                 feature.style.display = "none";
-//                 feature.previousElementSibling.classList.remove("open");
-//             });
-
-//             // Membuka hanya fitur yang sesuai dengan yang diklik
-//             content.style.display = "block";
-//             this.classList.add("open");
-//         });
-//     });
-// });
-
+ 
 
 document.addEventListener("DOMContentLoaded", function () {
     const featureHeaders = document.querySelectorAll(".feature-header");
@@ -69,3 +27,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+ 
+    // Ambil semua tombol dalam elemen fitur
+    const featureButtons = document.querySelectorAll('.feature button[data-action="redirect"]');
+
+    // Tambahkan event listener untuk setiap tombol
+    featureButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Dapatkan URL target dari atribut data-target pada elemen header yang sesuai
+            const target = this.closest('.feature').querySelector('.feature-header').getAttribute('data-target');
+            
+            // Arahkan pengguna ke URL target
+            window.location.href = target;
+        });
+    });
+ 
